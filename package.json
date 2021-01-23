@@ -1,14 +1,19 @@
 {
-  "name": "names-api-express",
+  "name": "names-api",
   "version": "0.0.1",
-  "description": "",
-  "main": "index.js",
   "scripts": {
     "build": "tsc --project ./",
     "start": "nodemon index.ts"
   },
-  "keywords": [],
-  "author": "",
+  "author": {
+    "name": "Zack Stickles",
+    "email": "zstickles@gmail.com",
+    "url": "https://zstix.io"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zstix/names-api.git"
+  },
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1"
