@@ -1,5 +1,6 @@
 {
   "name": "names-api",
+  "description": "Simple API to serve names and name preferences",
   "version": "0.0.1",
   "scripts": {
     "build": "tsc --project ./",
