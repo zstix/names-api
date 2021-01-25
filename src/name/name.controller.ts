@@ -10,9 +10,11 @@ const getAll = (conn: Connection) =>
   };
 
 const getOne = (conn: Connection) =>
-  async (req: Request, _res: Response): Promise<Name | undefined>  => {
+  async (req: Request, res: Response): Promise<void>  => {
+    const id = parseInt(req.params.id, 10);
     const repository = conn.getRepository(Name);
-    return await repository.findOne(Number(req.params.id));
+    const data = await repository.findOne(id);
+    res.json(data);
   }
 
 export default {
