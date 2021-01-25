@@ -1,15 +1,21 @@
-import { getRepository } from 'typeorm';
+import { Connection } from 'typeorm';
 import { Request, Response } from 'express';
-import { Name } from './name.entity';
+import { Names as Name } from './name.entity';
 
-export class NameController {
-  private repo = getRepository(Name);
+const getAll = (conn: Connection) =>
+  async (_req: Request, res: Response): Promise<void> => {
+    const repository = conn.getRepository(Name);
+    const data = await repository.find();
+    res.json(data);
+  };
 
-  async getAll(_req: Request, _res: Response): Promise<Name[]> {
-    return this.repo.find();
+const getOne = (conn: Connection) =>
+  async (req: Request, _res: Response): Promise<Name | undefined>  => {
+    const repository = conn.getRepository(Name);
+    return await repository.findOne(req.params.id);
   }
 
-  async getOne(req: Request, _res: Response): Promise<Name | undefined> {
-    return this.repo.findOne(req.params.id);
-  }
-}
+export default {
+  getAll,
+  getOne
+};
