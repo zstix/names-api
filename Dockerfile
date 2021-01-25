@@ -28,4 +28,4 @@ COPY --from=development /usr/src/app/dist ./dist
 
 EXPOSE 1337
 
-CMD ["node", "build/index.js"]
+CMD ["node", "build/app.js"]
