@@ -1,4 +1,6 @@
-module.exports = {
+import { ConnectionOptions } from "typeorm";
+
+const options: ConnectionOptions = {
   type: "postgres",
   host: process.env.TYPEORM_HOST,
   port: 5432,
@@ -12,4 +14,9 @@ module.exports = {
   cli: {
     migrationsDir: "src/migrations",
   },
+  ssl: {
+    rejectUnauthorized: false,
+  },
 };
+
+module.exports = options;
