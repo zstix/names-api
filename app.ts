@@ -11,6 +11,8 @@ const app = express();
 createConnection().then((conn) => {
   console.log('Connected to database');
 
+  app.get('/ping', (_req, res) => res.send('pong'));
+
   app.get('/names', NamesController.getAll(conn)); // TODO: pagination
   app.get('/names/:id', NamesController.getOne(conn));
 
