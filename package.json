@@ -4,7 +4,9 @@
   "version": "0.0.1",
   "scripts": {
     "build": "tsc --project ./",
-    "start": "nodemon app.ts"
+    "start": "nodemon app.ts",
+    "migration:run": "ts-node ./node_modules/typeorm/cli.js migration:run",
+    "migration:revert": "ts-node ./node_modules/typeorm/cli.js migration:revert"
   },
   "author": {
     "name": "Zack Stickles",

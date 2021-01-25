@@ -8,5 +8,8 @@ module.exports = {
   "synchronize": false,
   "logging": true,
   "entities": ["src/**/*.entity.ts"],
-  "migrations": ["src/migrations/**/*.ts"]
+  "migrations": ["src/migrations/*.ts"],
+  "cli": {
+    "migrationsDir": "src/migrations"
+  }
 };
