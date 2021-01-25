@@ -12,7 +12,7 @@ const getAll = (conn: Connection) =>
 const getOne = (conn: Connection) =>
   async (req: Request, _res: Response): Promise<Name | undefined>  => {
     const repository = conn.getRepository(Name);
-    return await repository.findOne(req.params.id);
+    return await repository.findOne(Number(req.params.id));
   }
 
 export default {
