@@ -12,8 +12,4 @@ module.exports = {
   cli: {
     migrationsDir: "src/migrations",
   },
-  ssl: {
-    // TODO: remove this after setting up ca / ssl
-    rejectUnauthorized: false,
-  },
 };
