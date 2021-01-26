@@ -3,9 +3,9 @@
   "description": "Simple API to serve names and name preferences",
   "version": "0.0.1",
   "scripts": {
-    "build": "tsc --project ./",
+    "build": "tsc --project ./ && npm run migration:run",
     "develop": "nodemon app.ts",
-    "start": "npm run migration:run && NODE_ENV=production node build/index.js",
+    "start": "NODE_ENV=production node build/index.js",
     "migration:run": "ts-node ./node_modules/typeorm/cli.js migration:run",
     "migration:revert": "ts-node ./node_modules/typeorm/cli.js migration:revert"
   },
