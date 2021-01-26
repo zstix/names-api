@@ -3,7 +3,7 @@ import { ConnectionOptions } from "typeorm";
 const options: ConnectionOptions = {
   type: "postgres",
   host: process.env.TYPEORM_HOST,
-  port: process.env.PORT ? parseInt(process.env.PORT, 10) : 5432,
+  port: 5432,
   username: process.env.TYPEORM_USERNAME,
   password: process.env.TYPEORM_PASSWORD,
   database: process.env.TYPEORM_DATABASE,

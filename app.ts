@@ -5,7 +5,7 @@ import NamesController from "./src/name/name.controller";
 
 dotenv.config();
 
-const port = 1337;
+const port = process.env.NODE_ENV === "production" ? 80 : 1337;
 const app = express();
 
 createConnection()
